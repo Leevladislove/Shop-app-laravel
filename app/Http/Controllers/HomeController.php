@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Good;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $goods = Good::query()->get();
+        return view('home', compact('goods'));
     }
 }

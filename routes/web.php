@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoodController;
+use App\Http\Controllers\HomeController;
 
 
 Route::get('/', function () {
@@ -10,5 +12,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/good/{id}', [App\Http\Controllers\GoodController::class, 'good'])->name('good');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/goods/{good}', [GoodController::class, 'good'])->name('good');
+Route::get('/categories/{category}', [GoodController::class, 'category'])->name('category');

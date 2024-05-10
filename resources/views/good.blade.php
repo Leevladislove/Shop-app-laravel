@@ -5,7 +5,7 @@
     <div class="content-head__container">
       <div class="content-head__title-wrap">
         <div class="content-head__title-wrap__title bcg-title">
-          {{ $good->title }}
+          {{ $good->title }} из категории {{ $good->category->title }}
         </div>
       </div>
       <div class="content-head__search-block">

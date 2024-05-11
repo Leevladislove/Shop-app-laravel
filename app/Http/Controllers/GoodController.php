@@ -17,7 +17,7 @@ class GoodController extends Controller
     {   
         $goods = $category->goods;
         $currentCategory = $category;
-    
+
         return view('home', compact('goods', 'currentCategory'));
     }
 }

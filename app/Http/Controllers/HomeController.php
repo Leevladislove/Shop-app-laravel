@@ -25,9 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $goods = Good::all();
+        $goods = Good::query()->paginate(3);
         $categories = Category::all();
-        
+
         return view('home', compact('goods', 'categories'));
     }
 }

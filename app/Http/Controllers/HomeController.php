@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Good;
+use App\Models\Order;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -24,10 +27,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        $goods = Good::query()->paginate(3);
-        $categories = Category::all();
+    {   
+        $goods = Good::query()->paginate(6);
 
-        return view('home', compact('goods', 'categories'));
+        return view('home', compact('goods'));
     }
 }

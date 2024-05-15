@@ -43,7 +43,7 @@
                         </div>
                         <div class="products-columns__item__description">
                             <span class="products-price">{{ $good->price }} руб</span>
-                            <a href="#" class="btn btn-blue">Купить</a>
+                            <a href="{{ route('buy', $good->id) }}" class="btn btn-blue">Купить</a>
                         </div>
                     </div>
                 @endforeach

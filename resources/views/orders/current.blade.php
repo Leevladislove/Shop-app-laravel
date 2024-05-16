@@ -46,7 +46,7 @@
     <div class="content-footer__container">
       @if ($goods)
         <div class="btn-buy-wrap">
-          <a href="{{ route('orders.process') }}" class="btn-buy-wrap__btn-link">
+          <a href="{{ route('order.process') }}" class="btn-buy-wrap__btn-link">
             Перейти к оплате
           </a>
         </div>

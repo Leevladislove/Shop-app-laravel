@@ -8,16 +8,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 
 
-Route::get('/', function () {
-    $goods = Good::paginate(6);
-    return view('home', compact('goods'));
-});
-
 Auth::routes();
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
-Route::get('goods/{good}', [GoodController::class, 'good'])->name('good');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::permanentRedirect('home', '/');
 Route::get('categories/{category}', [GoodController::class, 'category'])->name('category');
-Route::get('orders/buy/{id}', [OrderController::class, 'buy'])->name('buy');
-Route::get('orders/current', [OrderController::class, 'current'])->name('orders.current');
-Route::get('orders/process', [OrderController::class, 'process'])->name('orders.process');
+
+Route::middleware('auth')->group(function() {
+    Route::get('goods/{good}', [GoodController::class, 'show'])->name('good.show');
+    
+    Route::get('order/buy/{good}', [OrderController::class, 'buy'])->name('order.buy');
+    Route::get('order/current', [OrderController::class, 'current'])->name('order.current');
+    Route::get('order/process', [OrderController::class, 'process'])->name('order.process');
+});

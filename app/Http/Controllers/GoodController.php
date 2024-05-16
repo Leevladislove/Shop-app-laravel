@@ -7,18 +7,8 @@ use App\Models\Good;
 use Illuminate\Http\Request;
 
 class GoodController extends Controller
-{   
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
-    public function good(Good $good)
+{       
+    public function show(Good $good)
     {
         return view('good', compact('good'));
     }

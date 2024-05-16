@@ -12,25 +12,13 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {   
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function buy(int $id)
+    public function buy(Good $good)
     {   
-        $good = Good::query()->find($id);
-
-        if(!$good) {
+        if($good === null) {
             return redirect()->route('home');
         }
 
-        $currentOrder = Order::getCurrentOrder($id);
+        $currentOrder = Order::getCurrentOrder($good->id);
         
         if(!$currentOrder) {
             ($currentOrder = new Order([
@@ -41,16 +29,15 @@ class OrderController extends Controller
 
         (new OrderGood([
             'order_id' => $currentOrder->id,
-            'good_id' => $id,
+            'good_id' => $good->id,
         ]))->save();
 
-        return redirect()->route('orders.current');
+        return redirect()->route('order.current');
     }
 
     public function current()
     {
         $order = Order::getCurrentOrder(Auth::id());
-
         $goods = $order->goods ?? [];
         $totalSumOrders = $order ? $order->getSum() : 0;
 
@@ -66,7 +53,6 @@ class OrderController extends Controller
         }
 
         Mail::to(User::find(1))->send(new OrderCompleted($currentOrder, Auth::user()));
-
         $currentOrder->saveAsProcessed();
 
         return view('orders.completed');

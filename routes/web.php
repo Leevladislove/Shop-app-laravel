@@ -16,7 +16,8 @@ Route::permanentRedirect('home', '/');
 Route::get('goods/{good}', [GoodController::class, 'show'])->name('good.show');
 Route::get('categories/{category}', [GoodController::class, 'category'])->name('category');
 Route::view('about', 'about')->name('about');
-Route::view('news', 'news')->name('news');
+Route::view('news', 'news.news')->name('news');
+Route::view('news/one', 'news.one_news')->name('onenews');
 
 Route::middleware('auth')->group(function() {
     Route::get('order/buy/{good}', [OrderController::class, 'buy'])->name('order.buy');

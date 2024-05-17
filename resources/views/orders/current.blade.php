@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Мои заказы')
+
 @section('content')
 <div class="content-middle">
   <div class="content-head__container">

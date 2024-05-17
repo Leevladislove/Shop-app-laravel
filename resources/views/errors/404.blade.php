@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Страница не найдена')
+
 @section('content')
 <div class="content-middle">
   <h1>404 Страница не найдена</h1>

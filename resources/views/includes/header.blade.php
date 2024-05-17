@@ -12,7 +12,9 @@
 				<li class="nav-list__item">
 					<a href="{{ route('order.current') }}" class="nav-list__item__link">{{ __('Мои заказы') }}</a>
 				</li>
-				<li class="nav-list__item"><a href="#" class="nav-list__item__link">{{ __('Новости') }}</a></li>
+				<li class="nav-list__item">
+					<a href="{{ route('news') }}" class="nav-list__item__link">{{ __('Новости') }}</a>
+				</li>
 				<li class="nav-list__item">
 					<a href="{{ route('about') }}" class="nav-list__item__link">{{ __('О компании') }}</a>
 				</li>

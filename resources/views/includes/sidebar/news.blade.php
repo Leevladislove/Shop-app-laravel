@@ -1,5 +1,5 @@
 <div class="sidebar-item">
-	<div class="sidebar-item__title">Последние новости</div>
+	<div class="sidebar-item__title">{{ __('Последние новости') }}</div>
 	<div class="sidebar-item__content">
 		<div class="sidebar-news">
 			<div class="sidebar-news__item">

@@ -5,7 +5,7 @@
     <div class="content-head__container">
       <div class="content-head__title-wrap">
         <div class="content-head__title-wrap__title bcg-title">
-          {{ $good->title }} из категории {{ $good->category->title }}
+          {{ $good->title }} {{ __('из категории') }} {{ $good->category->title }}
         </div>
       </div>
       <div class="content-head__search-block">
@@ -28,9 +28,9 @@
           </div>
           <div class="product-container__content-text__price">
             <div class="product-container__content-text__price__value">
-              Цена: <b>{{ $good->price }}</b> руб
+              {{ __('Цена') }}: <b>{{ $good->price }}</b> руб
             </div>
-            <a href="{{ route('order.buy', $good->id) }}" class="btn btn-blue">Купить</a>
+            <a href="{{ route('order.buy', $good->id) }}" class="btn btn-blue">{{ __('Купить') }}</a>
           </div>
           <div class="product-container__content-text__description">
             <p>

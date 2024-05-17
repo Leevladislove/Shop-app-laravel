@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="footer__footer-content">
 		<div class="random-product-container">
-		<div class="random-product-container__head">Случайный товар</div>
+		<div class="random-product-container__head">{{ __('Случайный товар') }}</div>
 		<div class="random-product-container__content">
 			<div class="item-product">
 				<div class="item-product__title-product">
@@ -20,7 +20,7 @@
 					</div>
 					<div class="item-product__description__btn-block">
 						<a href="#" class="btn btn-blue">
-							Купить
+							{{ __('Купить') }}
 						</a>
 					</div>
 				</div>

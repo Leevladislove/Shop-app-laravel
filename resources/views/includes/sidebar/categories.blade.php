@@ -1,5 +1,5 @@
 <div class="sidebar-item">
-	<div class="sidebar-item__title">Категории</div>
+	<div class="sidebar-item__title">{{ __('Категории') }}</div>
 	<div class="sidebar-item__content">
 		<ul class="sidebar-category">
 			@foreach ($categories as $category)

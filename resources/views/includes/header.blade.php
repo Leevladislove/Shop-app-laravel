@@ -7,19 +7,19 @@
 		<nav class="main-navigation">
 			<ul class="nav-list">
 			<li class="nav-list__item">
-				<a href="{{ route('home') }}" class="nav-list__item__link">Главная</a>
+				<a href="{{ route('home') }}" class="nav-list__item__link">{{ __('Главная') }}</a>
 			</li>
 			<li class="nav-list__item">
-				<a href="{{ route('order.current') }}" class="nav-list__item__link">Мои заказы</a>
+				<a href="{{ route('order.current') }}" class="nav-list__item__link">{{ __('Мои заказы') }}</a>
 			</li>
-			<li class="nav-list__item"><a href="#" class="nav-list__item__link">Новости</a></li>
-			<li class="nav-list__item"><a href="#" class="nav-list__item__link">О компании</a></li>
+			<li class="nav-list__item"><a href="#" class="nav-list__item__link">{{ __('Новости') }}</a></li>
+			<li class="nav-list__item"><a href="#" class="nav-list__item__link">{{ __('О компании') }}</a></li>
 			</ul>
 		</nav>
 	<div class="header-contact">
 		<div class="header-contact__phone">
 			<a href="#" class="header-contact__phone-link">
-				Телефон: 33-333-33
+				{{ __('телефон') }}: 333 33 12
 			</a>
 		</div>
 	</div>
@@ -27,13 +27,13 @@
 		<div class="payment-container">
 			<div class="payment-basket__status">
 				<div class="payment-basket__status__icon-block">
-					<a class="payment-basket__status__icon-block__link">
+					<a href="{{ route('order.current') }}" class="payment-basket__status__icon-block__link">
 						<i class="fa fa-shopping-basket"></i>
 					</a>
 				</div>
 				<div class="payment-basket__status__basket">
 					<span class="payment-basket__status__basket-value">{{ $boxSize }}</span>
-					<span class="payment-basket__status__basket-value-descr">товаров</span>
+					<span class="payment-basket__status__basket-value-descr">{{ __('товаров') }}</span>
 				</div>
 			</div>
 		</div>

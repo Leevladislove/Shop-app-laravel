@@ -12,11 +12,11 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::permanentRedirect('home', '/');
+
+Route::get('goods/{good}', [GoodController::class, 'show'])->name('good.show');
 Route::get('categories/{category}', [GoodController::class, 'category'])->name('category');
 
 Route::middleware('auth')->group(function() {
-    Route::get('goods/{good}', [GoodController::class, 'show'])->name('good.show');
-    
     Route::get('order/buy/{good}', [OrderController::class, 'buy'])->name('order.buy');
     Route::get('order/current', [OrderController::class, 'current'])->name('order.current');
     Route::get('order/process', [OrderController::class, 'process'])->name('order.process');

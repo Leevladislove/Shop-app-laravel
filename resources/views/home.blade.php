@@ -7,11 +7,11 @@
 
                 @if (isset($currentCategory))
                     <div class="content-head__title-wrap__title bcg-title">
-                        Товары в категории: {{ $currentCategory->title }}
+                        {{ __('Товары в категории') }}: {{ $currentCategory->title }}
                     </div>
                 @else
                     <div class="content-head__title-wrap__title bcg-title">
-                        Последние товары
+                        {{ __('Последние товары') }}
                     </div>
                 @endif
                 
@@ -43,7 +43,7 @@
                         </div>
                         <div class="products-columns__item__description">
                             <span class="products-price">{{ $good->price }} руб</span>
-                            <a href="{{ route('order.buy', $good->id) }}" class="btn btn-blue">Купить</a>
+                            <a href="{{ route('order.buy', $good->id) }}" class="btn btn-blue">{{ __('Купить') }}</a>
                         </div>
                     </div>
                 @endforeach

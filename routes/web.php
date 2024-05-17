@@ -21,3 +21,8 @@ Route::middleware('auth')->group(function() {
     Route::get('order/current', [OrderController::class, 'current'])->name('order.current');
     Route::get('order/process', [OrderController::class, 'process'])->name('order.process');
 });
+
+
+Route::fallback(function () {
+    abort(404, 'Page not found');
+});
